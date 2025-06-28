@@ -2,7 +2,8 @@ import { createBrowserRouter } from 'react-router';
 import Root from '../Layouts/Root/Root';
 import Home from '../Pages/Home/Home';
 import About from '../Pages/About/About';
-import Contact from '../Pages/Contact/Contact';
+import ProjectDetails from '../Components/Projects/ProjectDetails';
+import ContactPage from '../Pages/Contact/ContactPage';
 
 export const router = createBrowserRouter([
   {
@@ -19,7 +20,11 @@ export const router = createBrowserRouter([
       },
       {
         path: '/contact',
-        Component: Contact,
+        Component: ContactPage,
+      },
+      {
+        path: '/projectDetails/:id',
+        Component: ProjectDetails,
       },
     ],
   },

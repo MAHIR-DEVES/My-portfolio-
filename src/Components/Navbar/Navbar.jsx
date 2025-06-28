@@ -1,5 +1,6 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
+import { Link } from 'react-router';
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -37,6 +38,7 @@ const Navbar = () => {
           )}
         </NavLink>
       </li>
+
       <li>
         <NavLink to="/contact" className={linkClass}>
           {({ isActive }) => (
@@ -94,9 +96,16 @@ const Navbar = () => {
 
         {/* Profile section */}
         <div className="flex items-center gap-4">
-          <button className="btn btn-outline btn-primary btn-sm text-gray-300">
-            Resume
-          </button>
+          <a
+            href="https://drive.google.com/file/d/1_qB-e9yzSxsU19fGSKwQPQ8grVh6G_6s/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="btn btn-outline btn-primary btn-sm text-gray-300">
+              Resume
+            </button>
+          </a>
+
           <div className="avatar">
             <div className="w-10 rounded-full border-2 border-primary">
               <img
