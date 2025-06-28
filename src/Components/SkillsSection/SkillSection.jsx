@@ -87,7 +87,7 @@ const SkillSection = () => {
   ];
 
   return (
-    <div className="bg-[#0d1321] text-white py-16 px-6 md:px-12 lg:px-24">
+    <div className="bg-[#0d1321] text-white py-5 px-6 md:px-12 lg:px-24">
       <div className="max-w-6xl mx-auto ">
         {/* Header */}
         <motion.div
@@ -160,42 +160,42 @@ const SkillSection = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
-          className="mt-16 flex flex-col items-center"
+          className="mt-16 w-full"
         >
           <div className="text-center mb-4">
             <span className="text-lg text-gray-300">Specialized in</span>
           </div>
 
-          {/* Improved responsive container */}
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 bg-gray-900/50 px-4 py-2 sm:px-6 sm:py-3 rounded-full border border-gray-800 w-full max-w-md mx-4">
-            {/* MongoDB - now wraps on smallest screens */}
-            <div className="flex items-center gap-1 text-blue-400 whitespace-nowrap">
-              <SiMongodb className="text-xl sm:text-2xl" />
-              <span className="text-sm sm:text-base">MongoDB</span>
+          {/* Responsive badge container */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-0">
+            {/* MongoDB */}
+            <div className="flex items-center gap-2 px-4 py-2 bg-gray-900/50 rounded-full border border-gray-800 w-full sm:w-auto sm:rounded-r-none sm:border-r-0">
+              <SiMongodb className="text-blue-400 text-xl sm:text-2xl" />
+              <span className="text-blue-400 text-sm sm:text-base">
+                MongoDB
+              </span>
             </div>
 
-            <div className="text-gray-500 hidden xs:block">|</div>
-
-            {/* Express - adjusted spacing */}
-            <div className="flex items-center gap-1 text-green-500 whitespace-nowrap">
-              <SiExpress className="text-xl sm:text-2xl" />
-              <span className="text-sm sm:text-base">Express</span>
+            {/* Express */}
+            <div className="flex items-center gap-2 px-4 py-2 bg-gray-900/50 rounded-full border border-gray-800 w-full sm:w-auto sm:rounded-none sm:border-r-0">
+              <SiExpress className="text-green-500 text-xl sm:text-2xl" />
+              <span className="text-green-500 text-sm sm:text-base">
+                Express
+              </span>
             </div>
 
-            <div className="text-gray-500 hidden sm:block">|</div>
-
-            {/* React - with responsive text size */}
-            <div className="flex items-center gap-1 text-cyan-400 whitespace-nowrap">
-              <FaReact className="text-xl sm:text-2xl" />
-              <span className="text-sm sm:text-base">React</span>
+            {/* React */}
+            <div className="flex items-center gap-2 px-4 py-2 bg-gray-900/50 rounded-full border border-gray-800 w-full sm:w-auto sm:rounded-none sm:border-r-0">
+              <FaReact className="text-cyan-400 text-xl sm:text-2xl" />
+              <span className="text-cyan-400 text-sm sm:text-base">React</span>
             </div>
 
-            <div className="text-gray-500 hidden md:block">|</div>
-
-            {/* Node.js - fully visible on all screens */}
-            <div className="flex items-center gap-1 text-green-600 whitespace-nowrap">
-              <FaNodeJs className="text-xl sm:text-2xl" />
-              <span className="text-sm sm:text-base">Node.js</span>
+            {/* Node.js */}
+            <div className="flex items-center gap-2 px-4 py-2 bg-gray-900/50 rounded-full border border-gray-800 w-full sm:w-auto sm:rounded-l-none">
+              <FaNodeJs className="text-green-600 text-xl sm:text-2xl" />
+              <span className="text-green-600 text-sm sm:text-base">
+                Node.js
+              </span>
             </div>
           </div>
         </motion.div>

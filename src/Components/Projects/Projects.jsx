@@ -21,7 +21,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className="bg-[#0d1321] py-16 px-4 sm:px-6 lg:px-8 min-h-screen">
+    <div className="bg-[#0d1321] py-5 px-4 sm:px-6 lg:px-8 min-h-screen">
       {/* Header Section */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}

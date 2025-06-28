@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const AboutSection = () => {
   return (
-    <div className="bg-[#0d1321] text-white py-16 px-6 sm:px-8 md:px-12 lg:px-24 xl:px-32">
+    <div className="bg-[#0d1321] text-white py-5 px-6 sm:px-8 md:px-12 lg:px-24 xl:px-32">
       <div className="max-w-6xl mx-auto">
         {/* Header Section - Perfectly Centered */}
         <motion.div
