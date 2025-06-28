@@ -7,13 +7,46 @@ import {
   SiJavascript,
   SiTailwindcss,
   SiGit,
+  SiDaisyui,
 } from 'react-icons/si';
-import { TbBrandNextjs } from 'react-icons/tb';
+import { IoLogoFirebase } from 'react-icons/io5';
 
 const SkillSection = () => {
   const skillCategories = [
     {
-      name: 'MERN Stack',
+      name: 'Frontend',
+      skills: [
+        {
+          name: 'JavaScript',
+          icon: <SiJavascript className="w-full h-full" />,
+          level: 95,
+        },
+
+        {
+          name: 'React',
+          icon: <FaReact className="w-full h-full" />,
+          level: 95,
+        },
+        {
+          name: 'Firebase',
+          icon: <IoLogoFirebase className="w-full h-full" />,
+          level: 83,
+        },
+        {
+          name: 'Tailwind CSS',
+          icon: <SiTailwindcss className="w-full h-full" />,
+          level: 90,
+        },
+        {
+          name: 'Daisyui ',
+          icon: <SiDaisyui className="w-full h-full" />,
+          level: 93,
+        },
+      ],
+      color: 'from-blue-400 to-cyan-400',
+    },
+    {
+      name: 'Backend',
       skills: [
         {
           name: 'MongoDB',
@@ -25,11 +58,7 @@ const SkillSection = () => {
           icon: <SiExpress className="w-full h-full" />,
           level: 85,
         },
-        {
-          name: 'React',
-          icon: <FaReact className="w-full h-full" />,
-          level: 95,
-        },
+
         {
           name: 'Node.js',
           icon: <FaNodeJs className="w-full h-full" />,
@@ -38,27 +67,7 @@ const SkillSection = () => {
       ],
       color: 'from-purple-500 to-blue-500',
     },
-    {
-      name: 'Frontend',
-      skills: [
-        {
-          name: 'JavaScript',
-          icon: <SiJavascript className="w-full h-full" />,
-          level: 95,
-        },
-        {
-          name: 'Tailwind CSS',
-          icon: <SiTailwindcss className="w-full h-full" />,
-          level: 90,
-        },
-        {
-          name: 'Next.js',
-          icon: <TbBrandNextjs className="w-full h-full" />,
-          level: 80,
-        },
-      ],
-      color: 'from-blue-400 to-cyan-400',
-    },
+
     {
       name: 'Tools',
       skills: [
@@ -79,7 +88,7 @@ const SkillSection = () => {
 
   return (
     <div className="bg-[#0d1321] text-white py-16 px-6 md:px-12 lg:px-24">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto ">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -156,25 +165,37 @@ const SkillSection = () => {
           <div className="text-center mb-4">
             <span className="text-lg text-gray-300">Specialized in</span>
           </div>
-          <div className="flex items-center justify-center gap-2 sm:gap-4 bg-gray-900/50 px-6 py-3 rounded-full border border-gray-800">
-            <div className="flex items-center gap-1 text-blue-400">
-              <SiMongodb className="text-2xl" />
-              <span>MongoDB</span>
+
+          {/* Improved responsive container */}
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 bg-gray-900/50 px-4 py-2 sm:px-6 sm:py-3 rounded-full border border-gray-800 w-full max-w-md mx-4">
+            {/* MongoDB - now wraps on smallest screens */}
+            <div className="flex items-center gap-1 text-blue-400 whitespace-nowrap">
+              <SiMongodb className="text-xl sm:text-2xl" />
+              <span className="text-sm sm:text-base">MongoDB</span>
             </div>
-            <div className="text-gray-500">|</div>
-            <div className="flex items-center gap-1 text-green-500">
-              <SiExpress className="text-2xl" />
-              <span>Express</span>
+
+            <div className="text-gray-500 hidden xs:block">|</div>
+
+            {/* Express - adjusted spacing */}
+            <div className="flex items-center gap-1 text-green-500 whitespace-nowrap">
+              <SiExpress className="text-xl sm:text-2xl" />
+              <span className="text-sm sm:text-base">Express</span>
             </div>
-            <div className="text-gray-500">|</div>
-            <div className="flex items-center gap-1 text-cyan-400">
-              <FaReact className="text-2xl" />
-              <span>React</span>
+
+            <div className="text-gray-500 hidden sm:block">|</div>
+
+            {/* React - with responsive text size */}
+            <div className="flex items-center gap-1 text-cyan-400 whitespace-nowrap">
+              <FaReact className="text-xl sm:text-2xl" />
+              <span className="text-sm sm:text-base">React</span>
             </div>
-            <div className="text-gray-500">|</div>
-            <div className="flex items-center gap-1 text-green-600">
-              <FaNodeJs className="text-2xl" />
-              <span>Node.js</span>
+
+            <div className="text-gray-500 hidden md:block">|</div>
+
+            {/* Node.js - fully visible on all screens */}
+            <div className="flex items-center gap-1 text-green-600 whitespace-nowrap">
+              <FaNodeJs className="text-xl sm:text-2xl" />
+              <span className="text-sm sm:text-base">Node.js</span>
             </div>
           </div>
         </motion.div>
