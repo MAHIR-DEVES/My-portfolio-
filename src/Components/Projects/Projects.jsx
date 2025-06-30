@@ -9,7 +9,7 @@ const Projects = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:3000/projects')
+      .get('https://portfolio-server-zeta-seven.vercel.app/projects')
       .then(res => {
         setProjects(res.data);
         setLoading(false);
@@ -48,7 +48,7 @@ const Projects = () => {
       ) : projects.length > 0 ? (
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
+            {projects?.map((project, index) => (
               <motion.div
                 key={project._id}
                 initial={{ opacity: 0, y: 30 }}

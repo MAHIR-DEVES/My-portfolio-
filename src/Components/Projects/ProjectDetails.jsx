@@ -67,7 +67,7 @@ const ProjectDetails = () => {
     const fetchProject = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/projectDetails/${id}`
+          `https://portfolio-server-zeta-seven.vercel.app/projectDetails/${id}`
         );
         const normalizedData = normalizeProjectData(response.data);
         setProject(normalizedData);

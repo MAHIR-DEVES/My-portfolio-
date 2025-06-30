@@ -1,10 +1,39 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { FiMail, FiPhone, FiMessageSquare } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
 import { BsLinkedin } from 'react-icons/bs';
+import emailjs from '@emailjs/browser';
+import Swal from 'sweetalert2';
 
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = e => {
+    e.preventDefault();
+    console.log(form.current);
+
+    emailjs
+      .sendForm('service_1jvwitn', 'template_tnfy2b2', form.current, {
+        publicKey: 'ISw0DtoT7fMGUybcV',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+          Swal.fire({
+            position: 'ce',
+            icon: 'success',
+            title: 'Message send successfully',
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        },
+        error => {
+          console.log('FAILED...', error.text);
+        }
+      );
+  };
+
   return (
     <div className="bg-[#0d1321] text-white py-5 px-4 sm:px-6 lg:px-8 min-h-screen">
       <div className="max-w-6xl mx-auto">
@@ -136,7 +165,11 @@ const Contact = () => {
             <h3 className="text-xl sm:text-2xl font-semibold mb-6 text-center text-white">
               Send Me a Message
             </h3>
-            <form className="space-y-4 sm:space-y-6">
+            <form
+              ref={form}
+              onSubmit={sendEmail}
+              className="space-y-4 sm:space-y-6"
+            >
               <div>
                 <label
                   htmlFor="name"
@@ -146,7 +179,7 @@ const Contact = () => {
                 </label>
                 <input
                   type="text"
-                  id="name"
+                  name="user_name"
                   placeholder="John Doe"
                   className="w-full px-4 py-2 sm:py-3 bg-[#0d1321] border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white text-sm sm:text-base"
                 />
@@ -160,7 +193,7 @@ const Contact = () => {
                 </label>
                 <input
                   type="email"
-                  id="email"
+                  name="user_email"
                   placeholder="john@example.com"
                   className="w-full px-4 py-2 sm:py-3 bg-[#0d1321] border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white text-sm sm:text-base"
                 />
@@ -173,7 +206,7 @@ const Contact = () => {
                   Your Message
                 </label>
                 <textarea
-                  id="message"
+                  name="message"
                   placeholder="Hello, I'd like to discuss..."
                   rows="4"
                   className="w-full px-4 py-2 sm:py-3 bg-[#0d1321] border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white text-sm sm:text-base"

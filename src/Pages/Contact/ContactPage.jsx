@@ -5,6 +5,7 @@ const ContactPage = () => {
   return (
     <div>
       <Contact></Contact>
+      {/* <TestEmail></TestEmail> */}
     </div>
   );
 };

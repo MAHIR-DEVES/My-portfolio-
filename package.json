@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@tailwindcss/vite": "^4.1.11",
     "axios": "^1.10.0",
     "daisyui": "^5.0.43",
@@ -21,6 +22,7 @@
     "react-router-dom": "^7.6.3",
     "react-slick": "^0.30.3",
     "slick-carousel": "^1.8.1",
+    "sweetalert2": "^11.22.2",
     "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
