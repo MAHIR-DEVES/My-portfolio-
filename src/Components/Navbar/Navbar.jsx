@@ -92,7 +92,7 @@ const Navbar = () => {
             className="text-xl font-bold flex items-center"
           >
             <span className="text-primary font-serif">MAHIR</span>
-            <span className="dark:text-white text-gray-800">DAVES</span>
+            <span className="text-white ">DAVES</span>
           </button>
         </div>
 
