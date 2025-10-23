@@ -1,2 +1,35 @@
 @import 'tailwindcss';
 @plugin "daisyui";
+
+/* Full-page custom scrollbar */
+:root {
+  --scrollbar-track: #1e293b; /* Track background */
+  --scrollbar-thumb: #3b82f6; /* Thumb color */
+  --scrollbar-thumb-hover: #2563eb; /* Thumb hover color */
+}
+
+/* Chrome, Edge, Safari */
+html::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+html::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 10px;
+  border: 2px solid var(--scrollbar-track);
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover);
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}

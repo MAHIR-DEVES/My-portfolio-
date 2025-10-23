@@ -61,8 +61,6 @@ const ProjectDetails = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  console.log(project);
-
   useEffect(() => {
     const fetchProject = async () => {
       try {
@@ -133,9 +131,12 @@ const ProjectDetails = () => {
           {/* Back Button */}
           <button
             onClick={() => navigate(-1)}
-            className="flex items-center text-[#ff9f1c] hover:text-[#ffbf69] mb-8 transition-colors duration-300"
+            className="flex items-center to-blue-600 hover:text-[#ffbf69] mb-8 transition-colors duration-300"
           >
-            <FiArrowLeft className="mr-2" /> Back to Projects
+            <FiArrowLeft className="mr-2 " />{' '}
+            <p className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent leading-tight">
+              Back to Projects
+            </p>
           </button>
 
           {/* Project Header */}
@@ -158,7 +159,7 @@ const ProjectDetails = () => {
 
             {/* Project Info */}
             <div className="lg:w-1/2">
-              <h1 className="text-3xl md:text-4xl font-bold mb-4 text-[#ff9f1c]">
+              <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent leading-tight">
                 {name}
               </h1>
               <p className="text-lg mb-6 text-[#f1faee]">{description}</p>
@@ -221,7 +222,7 @@ const ProjectDetails = () => {
             {/* Features */}
             {features.length > 0 && (
               <div className="bg-[#1d3557]/50 p-6 rounded-xl border border-[#457b9d]/30">
-                <h3 className="text-2xl font-bold mb-4 text-[#ff9f1c]">
+                <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent leading-tight">
                   Key Features
                 </h3>
                 <ul className="space-y-3">
@@ -238,7 +239,7 @@ const ProjectDetails = () => {
             {/* Challenges */}
             {challenges.length > 0 && (
               <div className="bg-[#1d3557]/50 p-6 rounded-xl border border-[#457b9d]/30">
-                <h3 className="text-2xl font-bold mb-4 text-[#ff9f1c]">
+                <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent leading-tight">
                   Challenges Faced
                 </h3>
                 <ul className="space-y-3">
@@ -256,7 +257,7 @@ const ProjectDetails = () => {
           {/* Improvements */}
           {improvements.length > 0 && (
             <div className="bg-[#1d3557]/50 p-6 rounded-xl border border-[#457b9d]/30 mb-12">
-              <h3 className="text-2xl font-bold mb-4 text-[#ff9f1c]">
+              <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent leading-tight">
                 Future Improvements
               </h3>
               <ul className="space-y-3">

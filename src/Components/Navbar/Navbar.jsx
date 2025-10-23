@@ -5,58 +5,65 @@ import { Link } from 'react-router';
 const Navbar = () => {
   const navigate = useNavigate();
 
-  const linkClass = ({ isActive }) =>
-    `relative px-3 py-2 transition-all duration-300 ${
-      isActive
-        ? 'text-primary font-semibold'
-        : 'dark:text-gray-300 text-gray-700 hover:text-primary'
-    }`;
+  const scrollToSection = id => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+  const scrollToTop = id => {
+    window.top.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const links = (
     <>
       <li>
-        <NavLink to="/" className={linkClass}>
-          {({ isActive }) => (
-            <>
-              Home
-              {isActive && (
-                <span className="absolute left-1/2 bottom-0 h-0.5 bg-primary w-4/5 -translate-x-1/2 rounded-full animate-underline"></span>
-              )}
-            </>
-          )}
-        </NavLink>
+        <button
+          onClick={() => scrollToTop()}
+          className="relative px-3 py-2 transition-all duration-300 text-white hover:text-primary"
+        >
+          Home
+        </button>
       </li>
       <li>
-        <NavLink to="/about" className={linkClass}>
-          {({ isActive }) => (
-            <>
-              About
-              {isActive && (
-                <span className="absolute left-1/2 bottom-0 h-0.5 bg-primary w-4/5 -translate-x-1/2 rounded-full animate-underline"></span>
-              )}
-            </>
-          )}
-        </NavLink>
+        <button
+          onClick={() => scrollToSection('about')}
+          className="relative px-3 py-2 transition-all duration-300 text-white hover:text-primary"
+        >
+          About
+        </button>
+      </li>
+      <li>
+        <button
+          onClick={() => scrollToSection('skill')}
+          className="relative px-3 py-2 transition-all duration-300 text-white hover:text-primary"
+        >
+          Skill
+        </button>
+      </li>
+      <li>
+        <button
+          onClick={() => scrollToSection('project')}
+          className="relative px-3 py-2 transition-all duration-300 text-white hover:text-primary"
+        >
+          Project
+        </button>
       </li>
 
       <li>
-        <NavLink to="/contact" className={linkClass}>
-          {({ isActive }) => (
-            <>
-              Contact
-              {isActive && (
-                <span className="absolute left-1/2 bottom-0 h-0.5 bg-primary w-4/5 -translate-x-1/2 rounded-full animate-underline"></span>
-              )}
-            </>
-          )}
-        </NavLink>
+        <button
+          onClick={() => scrollToSection('contact')}
+          className="relative px-3 py-2 transition-all duration-300 text-white hover:text-primary"
+        >
+          Contact
+        </button>
       </li>
     </>
   );
 
   return (
-    <nav className="sticky top-0 z-50 bg-white dark:bg-[#001219] shadow-sm py-4 px-4 md:px-8 lg:px-12">
-      <div className="flex justify-between items-center  mx-auto">
+    <nav className="sticky top-0 z-50 bg-white dark:bg-[#001219] shadow-sm py-4  px-4 sm:px-0">
+      <div className="flex justify-between items-center max-w-7xl  mx-auto">
         {/* Logo and mobile menu */}
         <div className="flex items-center ">
           {/* Mobile hamburger menu */}
@@ -97,7 +104,7 @@ const Navbar = () => {
         {/* Profile section */}
         <div className="flex items-center gap-4">
           <a
-            href="https://drive.google.com/file/d/1_qB-e9yzSxsU19fGSKwQPQ8grVh6G_6s/view?usp=sharing"
+            href="https://drive.google.com/file/d/1J2OIGHJ7k2ArwEs-80LrIFyDDlmTlmTM/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
           >
